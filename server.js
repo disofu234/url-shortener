@@ -5,11 +5,9 @@ var path = require("path");
 var routes = require("./app/routes/index.js");
 var api = require("./app/api/api.js");
 
-var database_url = "mongodb://localhost:27017/link_database";
-
 var app = express();
 
-mongo.connect(database_url, function(err, db){
+mongo.connect(process.env.MONGODB_URI, function(err, db){
     if (err) throw err;
     
     db.createCollection("links");

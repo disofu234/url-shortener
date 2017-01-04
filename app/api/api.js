@@ -5,7 +5,7 @@ module.exports = function(app, db) {
         var randNum = newFourDigit();
         
         if (checkURL(url)) {
-            var obj = { "long-url": url, "short-url": "https://fcc-api-development-dacuban.c9users.io/" + randNum };
+            var obj = { "long-url": url, "short-url": process.env.ROOT_URL + randNum };
             
             res.json(obj);
             
@@ -16,7 +16,7 @@ module.exports = function(app, db) {
     });
     
     app.get("/:num", function(req, res) {
-        var short_url = "https://fcc-api-development-dacuban.c9users.io/" + req.params.num;
+        var short_url = process.env.ROOT_URL + req.params.num;
         
         if (!isNaN(req.params.num)) {
             db.find({
