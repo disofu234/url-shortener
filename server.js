@@ -21,5 +21,5 @@ mongo.connect(process.env.MONGODB_URI, function(err, db){
     routes(app);
     api(app, links);
     
-    app.listen(8080);
+    app.listen(process.env.PORT);
 });
