@@ -1,0 +1,16 @@
+doctype html
+html
+    head
+        link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+        link(rel="stylesheet" href="main.css")
+        title URL shortener
+    body
+        div(class="container")
+            h1 URL shortener service
+            h3 How to Use?
+            h5 To add a new website to the database, simply add #[code /new/websiteaddress] to the end of the url. Make sure to include the protocol. Ex:
+            code https://fcc-api-development-dacuban.c9users.io/new/https://www.google.com
+            h5 This will provide you with a response like,
+            code {"long-url": "https://www.google.com", "short-url": "https://fcc-api-development-dacuban.c9users.io/4952"}
+            h5 Now all you need to do is input the short url into your web address and it will redirect you to the original website.
+        
